@@ -1,0 +1,54 @@
+.card-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.row-grid, .col-grid{
+    margin-top: 3%;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid black;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.card h2 {
+    margin: 7px 0;
+}
+
+.row-grid img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.row-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    row-gap: 20px;
+    column-gap: 10px;
+}
+
+.col-grid {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 15px;
+    flex-direction: column-reverse;
+    align-content: center;
+    height: 2500px;
+}
+
+.col-grid .card {
+    flex-shrink: 3;
+}
+
+
+
+.col-grid img {
+    width: 100%;
+    height: calc(100% - 30px);
+}

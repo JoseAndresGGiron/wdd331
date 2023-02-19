@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+//Import mixin
+// Why this did not work?  --> @import "mixin";
+//Variable
+$links-not-visited-color: #666;
+$no-text-decoration: none;
+$hover-color: #00ddff;
+$boder-style: solid #d0d0d0;
+
+@mixin links-default {
+  text-decoration: $no-text-decoration;
+  color: $links-not-visited-color;
+}
+* {
+  margin: 0 auto;
+}
+
+h1 a,
+h2 a {
+  font-family: "Lora", serif;
+  text-decoration: none;
+  color: black;
+}
+h1 a {
+  font-size: 3rem;
+}
+h2 a {
+  font-size: 2rem;
+}
+//Nesting
+nav {
+  border-top: $boder-style;
+  ul {
+    li {
+      padding: calc(8px + 0vw);
+      list-style: none;
+      a {
+        font-size: 1.3rem;
+        margin: 1.3rem 0;
+      }
+    }
+  }
+}
+
+body {
+  max-width: 390px;
+  text-align: center;
+}
+
+h1,
+h2,
+p {
+  margin: 1.3rem 0;
+}
+body p,
+body p a {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #333;
+  text-decoration: $no-text-decoration;
+}
+//using mixin that has variables
+a:link:not(h1 a) {
+  @include links-default;
+}
+a:visited:not(h1 a) {
+  @include links-default;
+}
+
+a:hover:not(h1 a) {
+  text-decoration: $no-text-decoration;
+  color: $hover-color
+}
+
+a:active:not(h1 a) {
+  text-decoration: $no-text-decoration;
+  color: #deb887;
+}
+
+.post-date {
+  font-size: 1.5rem;
+  text-align: right;
+  padding: 2rem;
+  border-bottom: $boder-style;
+  border-top: $boder-style;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    max-width: 768px;
+    text-align: center;
+  }
+  nav {
+    border-bottom: $boder-style;
+    margin-bottom: 3%;
+    ul {
+        display: flex;
+        padding-left: 42%;
+      }
+  }
+  
+  article {
+    display: flex;
+    flex-direction: row;
+    article:nth-child(1) section {
+        border-bottom: $boder-style;
+      }
+  }
+  .post-date {
+    text-align: right;
+    padding: 2rem;
+    border-right: $boder-style;
+    border-top: none;
+    border-bottom: none;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  section.post-content {
+    width: 100%;
+  }
+  .post-date {
+    width: 20%;
+  }
+}
