@@ -1,0 +1,15 @@
+<svg id=card2 width="300" height="400">
+  <defs>
+    <pattern id="mypattern2" patternUnits="userSpaceOnUse" x="0" y="0" width="300" height="400">
+      <g>
+        <ellipse cx="150" cy="175" rx="100" ry="70" style="fill:purple" />
+        <ellipse cx="150" cy="225" rx="83" ry="13" style="fill:purple; stroke:white; stroke-dasharray: 10 20 35; stroke-width:3" fill:purple;" />
+        <ellipse cx="150" cy="229" rx="70" ry="14" style="fill:darkred" />
+      </g>
+      <g>
+        <polyline points="100,229 110,254 102,269" style="fill:none;stroke:black;stroke-width:9"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect fill="url(#mypattern2)" class="patternRectangle" />
+</svg>
